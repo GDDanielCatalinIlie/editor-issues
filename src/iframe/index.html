@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CKEditor 5 - iframe issue</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding-bottom: 800px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            margin-top: 400px;
+            ;
+        }
+
+        .section iframe {
+            width: 600px;
+            height: 500px;
+            margin: auto;
+            border: none;
+            display: block;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div id="toolbar"></div>
+        <iframe id="sectionFrame" src="iframe.html" frameborder="0"></iframe>
+    </div>
+
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
