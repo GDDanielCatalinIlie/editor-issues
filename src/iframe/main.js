@@ -21,7 +21,7 @@ const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 const targetNode = iframeDoc.querySelector('#editor');
 const toolbarContainer = document.getElementById('toolbar');
 
-console.log(targetNode);
+console.log('targetNode:',targetNode);
 
 if (targetNode) {
     initDecoupledEditor(targetNode, toolbarContainer);
