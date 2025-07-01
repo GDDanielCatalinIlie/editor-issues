@@ -16,7 +16,6 @@
             display: flex;
             flex-direction: column;
             margin-top: 400px;
-            ;
         }
 
         .section iframe {
@@ -31,11 +30,18 @@
 </head>
 
 <body>
+    <h1>CKEditor 5 - iframe issue</h1>
+    <p>
+        This page demonstrates an issue with CKEditor 5 in an iframe.
+        <br/>
+        The editor is initialized from outside the iframe, so that the toolbar can be placed outside the iframe.
+    </p>
+
     <div class="section">
+        Toolbar should be outside the iframe:
         <div id="toolbar"></div>
         <iframe id="sectionFrame" src="iframe.html" frameborder="0"></iframe>
     </div>
-
 
     <script type="module" src="./main.js"></script>
 </body>
