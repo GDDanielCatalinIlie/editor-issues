@@ -6,13 +6,29 @@
     <title>CKEditor 5 - inherited styles issue</title>
 
     <style>
+        .container {
+            display: flex;
+            gap: 1em;
+        }
+
+        .row {
+            width: 50%;
+        }
+
         #editor {
-            max-width: 1200px;
+            margin-top: 50px;
+        }
+
+        .editor-fixed {
             margin-top: 50px;
         }
 
         .text-center {
             text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
         }
 
         .text-red {
@@ -55,82 +71,111 @@
         This page demonstrates an issue with how CKEditor 5 handles inherited styles.
     </p>
 
-    <div id="editor">
-        <h1>Inline editor here</h1>
+    <div class="container">
+        <div class="row">
+            <hr>
+            <h2>Style issues:</h2>
+            <hr>
+            <div id="editor">
+                <h1>Inline editor here</h1>
 
-        <h3>color</h3>
-        <p style="color: red;">⚠️ This text should be red.</p>
-        <p>
-            <span style="color: red;">
-                ✅ This text should be red, set on text block.
-            </span>
-        </p>
-        <p class="text-red">⚠️ This text should be red by inheritance.</p>
-        <hr>
+                <h3>color</h3>
+                <p style="color: red;">⚠️ This text should be red. <b>NOT reflected in the toolbar.</b></p>
+                <p>
+                    <span style="color: red;">
+                        ✅ This text should be red, set on text block.
+                    </span>
+                </p>
+                <p class="text-red">⚠️ This text should be red by inheritance. <b>NOT reflected in the toolbar.</b></p>
+                <hr>
 
-        <h3>background-color</h3>
-        <p style="background-color: yellow;">⚠️ This text should have a yellow background.</p>
-        <p>
-            <span style="background-color: yellow;">
-                ✅ This text should have a yellow background, set on text block.
-            </span>
-        </p>
-        <p class="bg-yellow">⚠️ This text should have a yellow background by inheritance.</p>
-        <hr>
+                <h3>background-color</h3>
+                <p style="background-color: yellow;">⚠️ This text should have a yellow background. <b>NOT reflected in the toolbar.</b></p>
+                <p>
+                    <span style="background-color: yellow;">
+                        ✅ This text should have a yellow background, set on text block.
+                    </span>
+                </p>
+                <p class="bg-yellow">⚠️ This text should have a yellow background by inheritance. <b>NOT reflected in the toolbar.</b></p>
+                <hr>
 
-        <h3>font-family</h3>
-        <p style="font-family: Verdana, Geneva, sans-serif;">⚠️ This text should be in Verdana.</p>
-        <p>
-            <span style="font-family: Verdana, Geneva, sans-serif;">
-                ✅ This text should be in Verdana, set on text block.
-            </span>
-        </p>
-        <p class="text-verdana">⚠️ This text should be in Verdana by inheritance.</p>
-        <hr>
+                <h3>font-family</h3>
+                <p style="font-family: Verdana, Geneva, sans-serif;">⚠️ This text should be in Verdana. <b>NOT reflected in the toolbar.</b></p>
+                <p>
+                    <span style="font-family: Verdana, Geneva, sans-serif;">
+                        ✅ This text should be in Verdana, set on text block.
+                    </span>
+                </p>
+                <p class="text-verdana">⚠️ This text should be in Verdana by inheritance. <b>NOT reflected in the toolbar.</b></p>
+                <hr>
 
-        <h3>font-size</h3>
-        <p style="font-size: 20px;">⚠️ This text should be larger.</p>
-        <p>
-            <span style="font-size: 20px;">
-                ✅ This text should be larger, set on text block.
-            </span>
-        </p>
-        <p class="text-large">⚠️ This text should be larger by inheritance.</p>
-        <hr>
+                <h3>font-size</h3>
+                <p style="font-size: 20px;">⚠️ This text should be larger. <b>NOT reflected in the toolbar.</b></p>
+                <p>
+                    <span style="font-size: 20px;">
+                        ✅ This text should be larger, set on text block.
+                    </span>
+                </p>
+                <p class="text-large">⚠️ This text should be larger by inheritance. <b>NOT reflected in the toolbar.</b></p>
+                <hr>
 
-        <h3>font-style</h3>
-        <p style="font-style: italic;">✅ This text should be italic.</p>
-        <p>
-            <span style="font-style: italic;">
-                ✅ This text should be italic, set on text block.
-            </span>
-        </p>
-        <p class="text-italic">⚠️ This text should be italic by inheritance.</p>
-        <hr>
+                <h3>font-style</h3>
+                <p style="font-style: italic;">✅ This text should be italic.</p>
+                <p>
+                    <span style="font-style: italic;">
+                        ✅ This text should be italic, set on text block.
+                    </span>
+                </p>
+                <p class="text-italic">⚠️ This text should be italic by inheritance. <b>NOT reflected in the toolbar.</b></p>
+                <hr>
 
-        <h3>font-weight</h3>
-        <p style="font-weight: bold;">✅ This text should be bold.</p>
-        <p>
-            <span style="font-weight: bold;">
-                ✅ This text should be bold, set on text block.
-            </span>
-        </p>
-        <p class="text-bold">⚠️ This text should be bold by inheritance.</p>
-        <hr>
+                <h3>font-weight</h3>
+                <p style="font-weight: bold;">✅ This text should be bold.</p>
+                <p>
+                    <span style="font-weight: bold;">
+                        ✅ This text should be bold, set on text block.
+                    </span>
+                </p>
+                <p class="text-bold">⚠️ This text should be bold by inheritance. <b>NOT reflected in the toolbar.</b></p>
+                <hr>
 
-        <h3>text-align</h3>
-        <p style="text-align: center;">✅ This text should be centered.</p>
-        <p class="text-center">⚠️ This text should be centered by inheritance.</p>
-        <hr>
+                <h3>text-align</h3>
+                <p style="text-align: center;">✅ This text should be centered.</p>
+                <p class="text-center">⚠️ This text should be centered by inheritance. <b>NOT reflected in the toolbar.</b></p>
+                <p>✅ This text should not be centered.</p>
+                <p class="text-right"> ⚠️ This text should be right aligned by inheritance. <b>NOT reflected in the toolbar.</b></p>
+                <hr>
 
-        <h3>text-decoration</h3>
-        <p style="text-decoration: underline;">✅ This text should be underlined.</p>
-        <p>
-            <span style="text-decoration: underline;">
-                ✅ This text should be underlined, set on text block.
-            </span>
-        </p>
-        <p class="text-underline">⚠️ This text should be underlined by inheritance.</p>
+                <h3>text-decoration</h3>
+                <p style="text-decoration: underline;">✅ This text should be underlined.</p>
+                <p>
+                    <span style="text-decoration: underline;">
+                        ✅ This text should be underlined, set on text block.
+                    </span>
+                </p>
+                <p class="text-underline">⚠️ This text should be underlined by inheritance. <b>NOT reflected in the toolbar.</b></p>
+            </div>
+        </div>
+        <div class="row">
+            <hr>
+            <h2>Text align issues fixed by the Extended Alignment plugin:</h2>
+            <hr>
+            <div class="editor-fixed" style="text-align: center;">
+                <h1>Inline editor here - text:center on root container</h1>
+
+                <p class="text-center">This text should be centered.</p>
+                <p class="text-right">This text should be right aligned.</p>
+                <p>This text should be centered.</p>
+            </div>
+            <hr>
+            <div class="editor-fixed" style="text-align: right;">
+                <h1>Inline editor here - text:right on root container</h1>
+
+                <p class="text-center">This text should be centered.</p>
+                <p class="text-right">This text should be right aligned.</p>
+                <p>This text should be right aligned.</p>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="./main.js"></script>
