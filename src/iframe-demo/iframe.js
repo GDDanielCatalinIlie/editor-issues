@@ -7,7 +7,6 @@ function initInlineEditor(element) {
     const config = editorConfig;
 
     if (window.frameElement && window.frameElement.hasAttribute('toolbar-wrap')) {
-        console.log(window.frameElement)
         config.toolbar.shouldNotGroupWhenFull = false
     }
 
