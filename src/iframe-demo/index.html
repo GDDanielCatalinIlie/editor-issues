@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CKEditor 5 - iframe issue demo</title>
+
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        .content {
+            width: 500px;
+            box-shadow: 0 0 5px 1px #ccc;
+            margin: 2rem auto 0;
+            padding: 1rem 0;
+        }
+
+        .section {
+            margin-bottom: 1rem;
+            background-color: #eee;
+        }
+
+        .section iframe {
+            width: 350px;
+            margin: auto;
+            border: none;
+            display: block;
+            background-color: #fafafa;
+        }
+
+        .s1 iframe {
+            height: 180px;
+        }
+
+        .s2 iframe {
+            height: 120px;
+        }
+
+        .s3 iframe {
+            height: 180px;
+        }
+
+        .s4 iframe {
+            height: 600px;
+        }
+
+        .s5 iframe {
+            height: 240px;
+        }
+
+        .s5 {
+            margin-bottom: 0;
+        }
+
+        .editor {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CKEditor 5 - iframe issue</h1>
+    <p>
+        This page demonstrates an issue with CKEditor 5 in an iframe. <br>
+        All editors use the same config.
+    </p>
+
+    <div class="editor">
+        <h1>Inline editor outside iframe here</h1>
+        <p>Hello, world a!</p>
+    </div>
+
+    <div class="content">
+        <div class="section s1">
+            <iframe id="sectionFrame" src="iframe.html" frameborder="0" toolbar-wrap></iframe>
+        </div>
+
+        <div class="section s2">
+            <iframe id="sectionFrame" src="iframe.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="section s3">
+            <iframe id="sectionFrame" src="iframe.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="section s4">
+            <iframe id="sectionFrame" src="iframe.html" frameborder="0" toolbar-wrap></iframe>
+        </div>
+
+        <div class="section s5">
+            <iframe id="sectionFrame" src="iframe.html" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
